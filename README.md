@@ -21,8 +21,31 @@ This is not an official Google product.
 
 ### Dependencies
 
-To install the Python dependencies, run:
+Install Pip if not currently installed:
 
+    sudo apt install python-pip
+    sudo pip install --upgrade pip
+    
+Install setproctitle:
+
+    sudo pip install setproctitle
+    
+#NumPy Install:
+
+    git clone https://github.com/numpy/numpy.git numpy
+    
+    sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
+    
+    cd numpy
+    
+    python setup.py build
+    
+Before building, you will also need to install packages that NumPy depends on:
+
+    
+    
+    
+    
     cd hdrnet
     pip install -r requirements.txt
 
