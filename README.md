@@ -82,7 +82,18 @@ Double check distributions to install before Tensor Flow
     sudo pip install html5lib
     
     sudo pip install bleach
-  
+    
+    git clone https://github.com/benjaminp/six.git
+    cd six
+    sudo python setup.py install
+    
+    cd ..
+Download ProtoBuf https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-python-3.4.1.tar.gz
+and extract it to the "Home" folder
+    
+    cd protobuf-3.4.1
+    ./configure
+    make
     
     cd hdrnet
     pip install -r requirements.txt
