@@ -17,7 +17,7 @@ Tested on Python 2.7, Ubuntu 14.0, gcc-4.8.
 
 This is not an official Google product.
 
-## Setup on a clean install of Ubuntu 16.04
+## How to setup on a clean install of Ubuntu 16.04 with an NVIDIA pascal gpu
 
 # Dependencies
 
@@ -105,13 +105,13 @@ and extract it to the "Home" folder
     $ sudo pip install tensorflow
     
 # Install CUDA 8
-*check for CUDA compatable Nvidia Gpu
 
-    $ lspci | grep -i nvidia
+    $ sudo apt-get install linux-headers-$(uname -r)
+    
+Download CUDA from NVIDIA https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal
+and move it to the "home" directory
 
-*If no settings appear, then update 
-
-    $ update-pciids
+    
 
 
     
