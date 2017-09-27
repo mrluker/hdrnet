@@ -105,8 +105,19 @@ and extract it to the "Home" folder
     $ sudo pip install tensorflow
     
 # Install CUDA 8
+Download cuda 8 here: https://developer.nvidia.com/cuda-80-ga2-download-archive
 
-    $ sudo apt-get install linux-headers-$(uname -r)
+Kill your current X server session by pressing CTRL+ALT+F1 and login using your credentials
+
+    $ sudo service lightdm stop
+
+
+    
+    
+    $ sudo apt-get install libcupti-dev
+    $ export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+    $ sudo apt-get update
+    $ sudo apt-get install cuda
     
 Download CUDA from NVIDIA https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal
 and move it to the "home" directory
