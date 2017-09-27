@@ -17,7 +17,7 @@ Tested on Python 2.7, Ubuntu 14.0, gcc-4.8.
 
 This is not an official Google product.
 
-## Setup
+## Setup on a clean install of Ubuntu 16.04
 
 ### Dependencies
 
@@ -30,17 +30,8 @@ Install setproctitle:
 
     sudo pip install setproctitle
     
-# NumPy Install:
-
-    git clone https://github.com/numpy/numpy.git numpy
     
-    sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
-    
-    cd numpy
-    
-    python setup.py build
-    
-Before the final build step, you will also need to install packages BLAS and LAPACK that NumPy depends on:
+Install BLAS LAPACK:
 
 (you have to install BLAS before LAPACK, because LAPACK needs it)
 
@@ -53,18 +44,34 @@ more info: http://www.netlib.org/blas/#_software
     mv blas_LINUX.a libblas.a
     sudo cp libblas.a /usr/local/lib/
     
-Download LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
+Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
 more info: http://www.netlib.org/lapack/#_software
-
+    
     cd ..
     cd lapack-3.7.1
-
 In the file browser, copy and rename the document "make.inc.example" to "make.inc"
     
     make
     
+Alternatively you can install this way:
     
+    sudo apt-get install liblapack-dev
     
+# NumPy Install:
+    git clone https://github.com/numpy/numpy.git numpy
+    
+    sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
+    
+    cd numpy
+    
+    python setup.py build
+    sudo python setup.py install
+    
+# pyglib Install:
+    cd ..
+    git clone https://github.com/benley/pyglib.git pyglib
+    cd pyglib
+    sudo python setup.py install
     
     cd hdrnet
     pip install -r requirements.txt
