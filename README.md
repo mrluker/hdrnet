@@ -38,39 +38,31 @@ Download here: https://cmake.org/download/ and extract it to the "home" folder
     $ make
     $ cd ..
     
+### Install Fortran
+
+    $ sudo apt-get install gfortran
+    
 ### Install BLAS & LAPACK:
 *(you have to install BLAS before LAPACK, because LAPACK needs it)
 
-Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
-*More info: http://www.netlib.org/blas/#_software
-
-    
-    $ cd BLAS-3.7.1
-    $ make
-    $ mv blas_LINUX.a libblas.a
-    $ sudo cp libblas.a /usr/local/lib/
+    $ git clone https://github.com/Reference-LAPACK/lapack-release.git
+    $ cd lapack-release
+    $ cp make.inc.example make.inc
+    $ make FC=make.inc
     $ cd ..
-    
-Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
-*More info: http://www.netlib.org/lapack/#_software
-    
-    $ sudo apt-get install liblapack-dev
     
 ### NumPy Install:
-    $ git clone https://github.com/numpy/numpy.git numpy
+    $ sudo pip install numpy
+    $ sudo pip install numpy --upgrade
     
+double check some things 
+
     $ sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
     
-    $ cd numpy
-    
-    $ python setup.py build
-    $ sudo python setup.py install
-    $ cd ..
 ### pyglib Install:
 
-    $ git clone https://github.com/benley/pyglib.git pyglib
-    $ cd pyglib
-    $ sudo python setup.py install
+    sudo pip install pyglib
+
 ### scikit_image & skimage
     $ sudo apt-get install python-skimage
     $ sudo pip install -U scikit-image
@@ -84,39 +76,30 @@ Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz
     
     $ sudo pip install bleach
     
-    $ git clone https://github.com/benjaminp/six.git
-    $ cd six
-    $ sudo python setup.py install
+    $ sudo pip install six
     
-    $ cd ..
 *Download ProtoBuf https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-python-3.4.1.tar.gz
 and extract it to the "Home" folder
     
-    $ cd protobuf-3.4.1
-    $ ./configure
-    $ make
-    $ cd ..
+    $ sudo pip install prodobuf
     
-    $ git clone https://github.com/testing-cabal/mock.git
-    $ cd mock
-    $ sudo python setup.py install
-    $ cd ..
+    $ sudo pip install mock
     
-    $ git clone https://github.com/pjdelport/backports.weakref.git
-    $ cd backports.wearef
-    $ sudo python setup.py install
-    $ cd ..
+    $ sudo pip install backports.weakref
     
     $ sudo pip install tensorboard
     
-    $ sudo pip install tensorflow
+    $ sudo pip install tensorflow_gpu
     
-# Install CUDA 8
-Download cuda 8 here: https://developer.nvidia.com/cuda-80-ga2-download-archive
+### Install python_gflag
 
-Kill your current X server session by pressing CTRL+ALT+F1 and login using your credentials
+    $ git clone https://github.com/google/python-gflags.git
+    $ cd python-gflags
+    $ python setup.py build
+    
+    
 
-    $ sudo service lightdm stop
+
 
 
     
