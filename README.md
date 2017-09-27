@@ -21,18 +21,17 @@ This is not an official Google product.
 
 ### Dependencies
 
-Install Pip if not currently installed:
+# Install Pip if not currently installed:
 
     sudo apt install python-pip
     sudo pip install --upgrade pip
     
-Install setproctitle:
+# Install setproctitle:
 
     sudo pip install setproctitle
     
     
-Install BLAS LAPACK:
-
+# Install BLAS & LAPACK:
 (you have to install BLAS before LAPACK, because LAPACK needs it)
 
 # Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
@@ -72,6 +71,9 @@ Alternatively you can install this way:
     git clone https://github.com/benley/pyglib.git pyglib
     cd pyglib
     sudo python setup.py install
+# scikit_image & skimage
+    sudo apt-get install python-skimage
+    sudo pip install -U scikit-image
     
     cd hdrnet
     pip install -r requirements.txt
