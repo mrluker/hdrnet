@@ -105,6 +105,7 @@ and extract it to the "Home" folder
     $ export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
     $ sudo apt-get update
     $ sudo apt-get upgrade
+    $ sudo apt install nvidia-cuda-toolkit
     
 ### Download HDRNET
 
