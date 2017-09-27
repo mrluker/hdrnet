@@ -32,19 +32,20 @@ This is not an official Google product.
     
     
 ### Install BLAS & LAPACK:
-(you have to install BLAS before LAPACK, because LAPACK needs it)
+*(you have to install BLAS before LAPACK, because LAPACK needs it)
 
-### Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
-More info: http://www.netlib.org/blas/#_software
+Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
+*More info: http://www.netlib.org/blas/#_software
 
     
     $ cd BLAS-3.7.1
     $ make
     $ mv blas_LINUX.a libblas.a
     $ sudo cp libblas.a /usr/local/lib/
+    $ cd ..
     
-### Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
-More info: http://www.netlib.org/lapack/#_software
+Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
+*More info: http://www.netlib.org/lapack/#_software
     
     $ sudo apt-get install liblapack-dev
     
@@ -56,9 +57,10 @@ More info: http://www.netlib.org/lapack/#_software
     $ cd numpy
     
     $ python setup.py build
-    $ sudo python setup.py install 
-### pyglib Install:
+    $ sudo python setup.py install
     $ cd ..
+### pyglib Install:
+
     $ git clone https://github.com/benley/pyglib.git pyglib
     $ cd pyglib
     $ sudo python setup.py install
@@ -66,7 +68,7 @@ More info: http://www.netlib.org/lapack/#_software
     $ sudo apt-get install python-skimage
     $ sudo pip install -U scikit-image
 ### Install Tensor Flow
-* Double check distributions to install before Tensor Flow
+*Install Distributions neded for Tensor Flow:
 
     $ pip install wheel
     $ pip wheel --wheel-dir=/tmp/wheelhouse pyramid
@@ -80,7 +82,7 @@ More info: http://www.netlib.org/lapack/#_software
     $ sudo python setup.py install
     
     $ cd ..
-Download ProtoBuf https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-python-3.4.1.tar.gz
+*Download ProtoBuf https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-python-3.4.1.tar.gz
 and extract it to the "Home" folder
     
     $ cd protobuf-3.4.1
@@ -98,8 +100,21 @@ and extract it to the "Home" folder
     $ sudo python setup.py install
     $ cd ..
     
-Download TensorBoard https://github.com/tensorflow/tensorboard/archive/0.1.4.tar.gz
-and extract it to the "Home" folder
+    $ sudo pip install tensorboard
+    
+    $ sudo pip install tensorflow
+    
+# Install CUDA 8
+*check for CUDA compatable Nvidia Gpu
+
+    $ lspci | grep -i nvidia
+
+*If no settings appear, then update 
+
+    $ update-pciids
+
+
+    
     
     
     cd hdrnet
