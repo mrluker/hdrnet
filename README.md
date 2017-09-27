@@ -19,22 +19,22 @@ This is not an official Google product.
 
 ## Setup on a clean install of Ubuntu 16.04
 
-### Dependencies
+# Dependencies
 
-# Install Pip if not currently installed:
+### Install Pip if not currently installed:
 
     sudo apt install python-pip
     sudo pip install --upgrade pip
     
-# Install setproctitle:
+### Install setproctitle:
 
     sudo pip install setproctitle
     
     
-# Install BLAS & LAPACK:
+### Install BLAS & LAPACK:
 (you have to install BLAS before LAPACK, because LAPACK needs it)
 
-# Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
+### Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
 More info: http://www.netlib.org/blas/#_software
 
     
@@ -43,7 +43,7 @@ More info: http://www.netlib.org/blas/#_software
     mv blas_LINUX.a libblas.a
     sudo cp libblas.a /usr/local/lib/
     
-# Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
+### Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
 More info: http://www.netlib.org/lapack/#_software
     
     cd ..
@@ -56,7 +56,7 @@ Alternatively you can install this way:
     
     sudo apt-get install liblapack-dev
     
-# NumPy Install:
+### NumPy Install:
     git clone https://github.com/numpy/numpy.git numpy
     
     sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
@@ -64,16 +64,25 @@ Alternatively you can install this way:
     cd numpy
     
     python setup.py build
-    sudo python setup.py install
-    
-# pyglib Install:
+    sudo python setup.py install 
+### pyglib Install:
     cd ..
     git clone https://github.com/benley/pyglib.git pyglib
     cd pyglib
     sudo python setup.py install
-# scikit_image & skimage
+### scikit_image & skimage
     sudo apt-get install python-skimage
     sudo pip install -U scikit-image
+## Install Tensor Flow
+Double check distributions to install before Tensor Flow
+
+    pip install wheel
+    pip wheel --wheel-dir=/tmp/wheelhouse pyramid
+    
+    sudo pip install html5lib
+    
+    sudo pip install bleach
+  
     
     cd hdrnet
     pip install -r requirements.txt
