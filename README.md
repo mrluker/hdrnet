@@ -40,8 +40,16 @@ Install setproctitle:
     
     python setup.py build
     
-Before building, you will also need to install packages that NumPy depends on:
+Before building, you will also need to install packages BLAS and LAPACK that NumPy depends on:
+you have to install BLAS before LAPACK, because LAPACK needs it
 
+Download BLAS (Basic Linear Algebra Subprograms) http://www.netlib.org/blas/#_software
+
+    
+    cd BLAS-3.7.1
+    make
+    mv blas_LINUX.a libblas.a
+    sudo cp libblas.a /usr/local/lib/
     
     
     
