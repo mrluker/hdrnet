@@ -30,6 +30,13 @@ This is not an official Google product.
 
     sudo pip install setproctitle
     
+### Install CMake:
+Download here: https://cmake.org/download/ and extract it to the "home" folder
+
+    $ cd cmake-3.9.3
+    $ ./configure
+    $ make
+    $ cd ..
     
 ### Install BLAS & LAPACK:
 *(you have to install BLAS before LAPACK, because LAPACK needs it)
