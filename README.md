@@ -30,7 +30,7 @@ Install setproctitle:
 
     sudo pip install setproctitle
     
-#NumPy Install:
+# NumPy Install:
 
     git clone https://github.com/numpy/numpy.git numpy
     
