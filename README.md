@@ -19,7 +19,7 @@ This is not an official Google product.
 
 ## How to setup on a clean install of Ubuntu 16.04 with an NVIDIA pascal gpu
 
-# Dependencies
+# Install Dependencies First
 
 ### Install Pip if not currently installed:
 
@@ -97,37 +97,31 @@ and extract it to the "Home" folder
     $ cd python-gflags
     $ python setup.py build
     
+### Install python_magic
+    $ sudo pip install python_magic
     
-
-
-
-
-    
-    
+### NVIDIA
     $ sudo apt-get install libcupti-dev
     $ export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
     $ sudo apt-get update
-    $ sudo apt-get install cuda
+    $ sudo apt-get upgrade
     
-Download CUDA from NVIDIA https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal
-and move it to the "home" directory
+### Download HDRNET
 
-    
+    $ git clone https://github.com/google/hdrnet.git
 
-
-    
     
     
     cd hdrnet
     pip install -r requirements.txt
 
-### Build
+# Build
 
 Our network requires a custom Tensorflow operator to "slice" in the bilateral grid.
 To build it, run:
 
-    cd hdrnet
-    make
+    $ cd hdrnet/hdrnet
+    $ make
 
 To build the benchmarking code, run:
 
