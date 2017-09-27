@@ -35,8 +35,8 @@ Install BLAS LAPACK:
 
 (you have to install BLAS before LAPACK, because LAPACK needs it)
 
-Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
-more info: http://www.netlib.org/blas/#_software
+# Download BLAS (Basic Linear Algebra Subprograms) @ www.netlib.org/blas/blas-3.7.1.tgz
+More info: http://www.netlib.org/blas/#_software
 
     
     cd BLAS-3.7.1
@@ -44,8 +44,8 @@ more info: http://www.netlib.org/blas/#_software
     mv blas_LINUX.a libblas.a
     sudo cp libblas.a /usr/local/lib/
     
-Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
-more info: http://www.netlib.org/lapack/#_software
+# Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
+More info: http://www.netlib.org/lapack/#_software
     
     cd ..
     cd lapack-3.7.1
