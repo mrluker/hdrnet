@@ -68,7 +68,7 @@ Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz
     $ sudo apt-get install python-skimage
     $ sudo pip install -U scikit-image
 ### Install Tensor Flow
-*Install Distributions neded for Tensor Flow:
+*Install Distributions needed for Tensor Flow:
 
     $ pip install wheel
     $ pip wheel --wheel-dir=/tmp/wheelhouse pyramid
