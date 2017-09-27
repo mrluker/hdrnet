@@ -38,62 +38,69 @@ This is not an official Google product.
 More info: http://www.netlib.org/blas/#_software
 
     
-    cd BLAS-3.7.1
-    make
-    mv blas_LINUX.a libblas.a
-    sudo cp libblas.a /usr/local/lib/
+    $ cd BLAS-3.7.1
+    $ make
+    $ mv blas_LINUX.a libblas.a
+    $ sudo cp libblas.a /usr/local/lib/
     
 ### Install LAPACK (Linear Algebra PACKage) @ www.netlib.org/lapack/lapack-3.7.1.tgz 
 More info: http://www.netlib.org/lapack/#_software
     
-    cd ..
-    cd lapack-3.7.1
-In the file browser, copy and rename the document "make.inc.example" to "make.inc"
-    
-    make
-    
-Alternatively you can install this way:
-    
-    sudo apt-get install liblapack-dev
+    $ sudo apt-get install liblapack-dev
     
 ### NumPy Install:
-    git clone https://github.com/numpy/numpy.git numpy
+    $ git clone https://github.com/numpy/numpy.git numpy
     
-    sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
+    $ sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
     
-    cd numpy
+    $ cd numpy
     
-    python setup.py build
-    sudo python setup.py install 
+    $ python setup.py build
+    $ sudo python setup.py install 
 ### pyglib Install:
-    cd ..
-    git clone https://github.com/benley/pyglib.git pyglib
-    cd pyglib
-    sudo python setup.py install
+    $ cd ..
+    $ git clone https://github.com/benley/pyglib.git pyglib
+    $ cd pyglib
+    $ sudo python setup.py install
 ### scikit_image & skimage
-    sudo apt-get install python-skimage
-    sudo pip install -U scikit-image
-## Install Tensor Flow
-Double check distributions to install before Tensor Flow
+    $ sudo apt-get install python-skimage
+    $ sudo pip install -U scikit-image
+### Install Tensor Flow
+* Double check distributions to install before Tensor Flow
 
-    pip install wheel
-    pip wheel --wheel-dir=/tmp/wheelhouse pyramid
+    $ pip install wheel
+    $ pip wheel --wheel-dir=/tmp/wheelhouse pyramid
     
-    sudo pip install html5lib
+    $ sudo pip install html5lib
     
-    sudo pip install bleach
+    $ sudo pip install bleach
     
-    git clone https://github.com/benjaminp/six.git
-    cd six
-    sudo python setup.py install
+    $ git clone https://github.com/benjaminp/six.git
+    $ cd six
+    $ sudo python setup.py install
     
-    cd ..
+    $ cd ..
 Download ProtoBuf https://github.com/google/protobuf/releases/download/v3.4.1/protobuf-python-3.4.1.tar.gz
 and extract it to the "Home" folder
     
-    cd protobuf-3.4.1
-    ./configure
-    make
+    $ cd protobuf-3.4.1
+    $ ./configure
+    $ make
+    $ cd ..
+    
+    $ git clone https://github.com/testing-cabal/mock.git
+    $ cd mock
+    $ sudo python setup.py install
+    $ cd ..
+    
+    $ git clone https://github.com/pjdelport/backports.weakref.git
+    $ cd backports.wearef
+    $ sudo python setup.py install
+    $ cd ..
+    
+Download TensorBoard https://github.com/tensorflow/tensorboard/archive/0.1.4.tar.gz
+and extract it to the "Home" folder
+    
     
     cd hdrnet
     pip install -r requirements.txt
