@@ -51,6 +51,30 @@ Download here: https://cmake.org/download/ and extract it to the "home" folder
     $ make FC=make.inc
     $ cd ..
     
+### Install GLEW https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.tgz/download
+extract it to the "home "
+    
+    $ sudo apt-get install build-essential libxmu-dev libxi-dev libgl-dev libosmesa-dev
+    $ cd glew-2.1.0
+    
+Using GNU Make
+    
+    $ make
+    $ sudo make install
+    $ make clean
+    $ cd ..
+    
+### Install Open CV
+
+    $ pip install opencv-python
+    
+### Install FFMPEG and LIBAV
+
+    $ sudo add-apt-repository ppa:djcj/hybrid
+    $ sudo apt-get update
+    $ sudo apt-get install ffmpeg -y
+
+    
 ### NumPy Install:
     $ sudo pip install numpy
     $ sudo pip install numpy --upgrade
