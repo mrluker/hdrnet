@@ -67,29 +67,54 @@ Using GNU Make
 ### Install Open CV
 
     $ pip install opencv-python
+    $ apt-get install libopencv-dev
     
 ### Install FFMPEG and LIBAV
 
     $ sudo add-apt-repository ppa:djcj/hybrid
     $ sudo apt-get update
     $ sudo apt-get install ffmpeg -y
-
     
+### Install HDF5
+    
+### Install Caffe
+
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
+save everything you have open
+    
+    $ reboot
+Run this first:
+
+    $ sudo apt-get install -y build-essential cmake git pkg-config
+    $ sudo apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler
+    $ sudo apt-get install -y libatlas-base-dev 
+    $ sudo apt-get install -y --no-install-recommends libboost-all-dev
+    $ sudo apt-get install -y libgflags-dev libgoogle-glog-dev liblmdb-dev
+Download Caffe: https://github.com/BVLC/caffe/archive/rc5.zip
+Extract it to the home folder
+    
+    $ cd caffe-rc5
+    $ cp Makefile.config.example Makefile.config
+    $ sudo apt-get install kate
+    $ kate ./Makefile.config
+    
+Paste the following code at the bottom of the document
+    
+  
 ### NumPy Install:
     $ sudo pip install numpy
     $ sudo pip install numpy --upgrade
-    
 double check some things 
 
     $ sudo apt-get install gcc gfortran python-dev libblas-dev liblapack-dev cython
-    
 ### pyglib Install:
 
     sudo pip install pyglib
-
 ### scikit_image & skimage
     $ sudo apt-get install python-skimage
     $ sudo pip install -U scikit-image
+    
 ### Install Tensor Flow
 *Install Distributions needed for Tensor Flow:
 
