@@ -51,8 +51,9 @@ Download here: https://cmake.org/download/ and extract it to the "home" folder
     $ make FC=make.inc
     $ cd ..
     
-### Install GLEW https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.tgz/download
-extract it to the "home "
+### Install GLEW
+download: https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.tgz/download
+extract it to the "home" folder
     
     $ sudo apt-get install build-essential libxmu-dev libxi-dev libgl-dev libosmesa-dev
     $ cd glew-2.1.0
@@ -76,6 +77,13 @@ Using GNU Make
     $ sudo apt-get install ffmpeg -y
     
 ### Install HDF5
+download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
+    
+    $ mkdir hdf5stuff
+Extract it to hdf5stuff
+
+    $ cd "hdf5stuff/CMake-hdf5-1.10.1"
+    $ chmod +x build-unix.sh
     
 ### Install Caffe
 
