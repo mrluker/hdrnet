@@ -80,7 +80,7 @@ Using GNU Make
 download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
     
     $ mkdir hdf5stuff
-Extract it to hdf5stuff
+Extract the tar.gz to hdf5stuff
 
     $ cd "hdf5stuff/CMake-hdf5-1.10.1"
     $ chmod +x build-unix.sh
