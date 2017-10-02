@@ -19,7 +19,7 @@ This is not an official Google product.
 
 ## How to setup on a clean install of Ubuntu 16.04 with an NVIDIA pascal gpu
 
-# Install Dependencies First
+#### Install Dependencies First
 
 ### Install Pip if not currently installed:
 
