@@ -18,17 +18,21 @@ Tested on Python 2.7, Ubuntu 14.0, gcc-4.8.
 This is not an official Google product.
 
 ## How to setup on a clean install of Ubuntu 16.04 with an NVIDIA pascal gpu
+I've trashed a lot of Ubuntu installs and had to start over again. Here are the steps:
 
 #### Install the following dependencies:
 
+### Install Git if not currently installed:
+    $ sudo apt install git
+
 ### Install Pip if not currently installed:
 
-    sudo apt install python-pip
-    sudo pip install --upgrade pip
+    $ sudo apt install python-pip
+    $ sudo pip install --upgrade pip
     
 ### Install setproctitle:
 
-    sudo pip install setproctitle
+    $ sudo pip install setproctitle
     
 ### Install CMake:
 Download here: https://cmake.org/download/ and extract it to the "home" folder
@@ -104,6 +108,8 @@ download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5
 Extract the tar.gz to hdf5stuff
 
     $ cd "hdf5stuff/CMake-hdf5-1.10.1"
+    $ ctest -S HDF5config.cmake,BUILD_GENERATOR=Unix -C Release -VV -O hdf5.log
+    $ cmake --build . --config {Debug | Release}
     $ chmod +x build-unix.sh
     $ ./build-unix.sh
     
