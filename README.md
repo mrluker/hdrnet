@@ -35,7 +35,7 @@ I've trashed a lot of Ubuntu installs and had to start over again. Here are the 
     $ sudo pip install setproctitle
     
 ### Install CMake:
-Download here: https://cmake.org/download/ and extract it to the "home" folder
+Download here: https://cmake.org/download/ and extract it to the "home" folder. Then run the following:
 
     $ cd cmake-3.9.3
     $ ./configure
@@ -57,7 +57,8 @@ Download here: https://cmake.org/download/ and extract it to the "home" folder
     
 ### Install GLEW
 download: https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.tgz/download
-extract it to the "home" folder
+Extract it to the "home" folder. Then run the following
+
     
     $ sudo apt-get install build-essential libxmu-dev libxi-dev libgl-dev libosmesa-dev
     $ cd glew-2.1.0
@@ -105,15 +106,12 @@ Install a writable copy of the samples then build and run the nbody sample:
 download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
     
     $ mkdir hdf5stuff
-Extract the tar.gz to hdf5stuff
+Extract the tar.gz to hdf5stuff. Then run the following:
 
     $ cd "hdf5stuff/CMake-hdf5-1.10.1"
     $ ctest -S HDF5config.cmake,BUILD_GENERATOR=Unix -C Release -VV -O hdf5.log
-    $ cmake --build . --config {Debug | Release}
     $ chmod +x build-unix.sh
     $ ./build-unix.sh
-    
-Create the following links so 
 
     
 ### Install Caffe
