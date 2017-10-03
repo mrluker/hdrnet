@@ -19,7 +19,7 @@ This is not an official Google product.
 
 ## How to setup on a clean install of Ubuntu 16.04 with an NVIDIA pascal gpu
 
-#### Install Dependencies First
+#### Install the following dependencies:
 
 ### Install Pip if not currently installed:
 
@@ -85,6 +85,9 @@ Extract the tar.gz to hdf5stuff
     $ cd "hdf5stuff/CMake-hdf5-1.10.1"
     $ chmod +x build-unix.sh
     $ ./build-unix.sh
+    
+Create the following links so 
+
     
 ### Install Caffe
 
