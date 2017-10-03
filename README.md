@@ -83,8 +83,8 @@ follow the instructions here: (they are also listed below) http://developer2.dow
     $ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
     $ sudo apt-get update
     $ sudo apt-get install cuda
-Reboot
-Set up the development environment by modifying the PATH and LD_LIBRARY_PATH variables:
+Reboot, then
+set up the development environment by modifying the PATH and LD_LIBRARY_PATH variables:
 
     $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\
