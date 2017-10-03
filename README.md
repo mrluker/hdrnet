@@ -112,6 +112,13 @@ Extract the tar.gz to hdf5stuff. Then run the following:
     $ ctest -S HDF5config.cmake,BUILD_GENERATOR=Unix -C Release -VV -O hdf5.log
     $ chmod +x build-unix.sh
     $ ./build-unix.sh
+Navigate to the root directory & create two symbolics so later steps can find HDF5:
+
+    $ cd /usr/lib/x86_64-linux-gnu
+    $ sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
+    $ sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
+
+
 
     
 ### Install Caffe
