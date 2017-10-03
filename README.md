@@ -76,6 +76,27 @@ Using GNU Make
     $ sudo apt-get update
     $ sudo apt-get install ffmpeg -y
     
+### Install Cuda 8
+download the cuda deb[local] file here: https://developer.nvidia.com/cuda-80-ga2-download-archive
+follow the instructions here: (they are also listed below) http://developer2.download.nvidia.com/compute/cuda/8.0/secure/Prod2/docs/sidebar/CUDA_Quick_Start_Guide.pdf?TK1-dsE5eqmaDkfXsf0_PvH6BKAzETQvh06qeuxMIR2j77oYH6_YFQRuE_7ml4sxrZrz7S3P-i_OIQBIPB64C59dIMe8oB2dPSEORTb0FJ7oV0uxN8u76TyecNQnPVfZfJDNQWl8BIP5b6kInmL4JkswUoVpziEByVQWKW1AzQGDTSU0
+
+    $ sudo dpkg --install cuda-repo-<distro>-<version>.<architecture>.deb
+    $ sudo apt-get update
+    $ sudo apt-get install cuda
+Reboot
+Set up the development environment by modifying the PATH and LD_LIBRARY_PATH variables:
+
+    $ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+    $ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+                         
+Install a writable copy of the samples then build and run the nbody sample:
+
+    $ cuda-install-samples-8.0.sh ~
+    $ cd ~/NVIDIA_CUDA-8.0_Samples/5_Simulations/nbody
+    $ make
+    $ ./nbody
+
 ### Install HDF5
 download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
     
