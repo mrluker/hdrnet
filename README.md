@@ -80,7 +80,7 @@ Using GNU Make
 download the cuda deb[local] file here: https://developer.nvidia.com/cuda-80-ga2-download-archive
 follow the instructions here: (they are also listed below) http://developer2.download.nvidia.com/compute/cuda/8.0/secure/Prod2/docs/sidebar/CUDA_Quick_Start_Guide.pdf?TK1-dsE5eqmaDkfXsf0_PvH6BKAzETQvh06qeuxMIR2j77oYH6_YFQRuE_7ml4sxrZrz7S3P-i_OIQBIPB64C59dIMe8oB2dPSEORTb0FJ7oV0uxN8u76TyecNQnPVfZfJDNQWl8BIP5b6kInmL4JkswUoVpziEByVQWKW1AzQGDTSU0
 
-    $ sudo dpkg --install cuda-repo-<distro>-<version>.<architecture>.deb
+    $ sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
     $ sudo apt-get update
     $ sudo apt-get install cuda
 Reboot
