@@ -80,7 +80,8 @@ Using GNU Make
     $ sudo add-apt-repository ppa:djcj/hybrid
     $ sudo apt-get update
     $ sudo apt-get install ffmpeg -y
-    
+# Install CUDA 8 and cuDNN
+All the steps are below and is based off the following guide found here: https://medium.com/@RotekSong/tutorial-installing-cuda-8-cudnn-5-1-fc3ac216ead6
 ### Install Cuda 8
 download the cuda deb[local] file here: https://developer.nvidia.com/cuda-80-ga2-download-archive
 follow the instructions here: (they are also listed below) http://developer2.download.nvidia.com/compute/cuda/8.0/secure/Prod2/docs/sidebar/CUDA_Quick_Start_Guide.pdf?TK1-dsE5eqmaDkfXsf0_PvH6BKAzETQvh06qeuxMIR2j77oYH6_YFQRuE_7ml4sxrZrz7S3P-i_OIQBIPB64C59dIMe8oB2dPSEORTb0FJ7oV0uxN8u76TyecNQnPVfZfJDNQWl8BIP5b6kInmL4JkswUoVpziEByVQWKW1AzQGDTSU0
@@ -101,7 +102,9 @@ Install a writable copy of the samples then build and run the nbody sample:
     $ cd ~/NVIDIA_CUDA-8.0_Samples/5_Simulations/nbody
     $ make
     $ ./nbody
-
+    
+### Install cuDNN
+ 
 ### Install HDF5
 download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
     
@@ -118,8 +121,9 @@ Navigate to the root directory & create two symbolics so later steps can find HD
     $ sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
     $ sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
 
+### Install Boost
 
-
+    $ sudo apt-get install libboost-all-dev
     
 ### Install Caffe
 
