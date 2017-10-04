@@ -104,6 +104,18 @@ Install a writable copy of the samples then build and run the nbody sample:
     $ ./nbody
     
 ### Install cuDNN
+
+step 2.1: Download cuDNN 5.1 from: https://developer.nvidia.com/cudnn
+
+You have to register a Nvidia developer account.
+
+step 2.2: Install cuDNN 5.1
+
+    $ tar -zxvf cudnn-8.0-linux-x64-v5.0-ga.tgz
+    $ sudo cp -a cuda/include/cudnn.h /usr/local/cuda/include/
+    $ sudo cp -a cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+
+
  
 ### Install HDF5
 download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
