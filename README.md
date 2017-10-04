@@ -105,17 +105,13 @@ Install a writable copy of the samples then build and run the nbody sample:
     
 ### Install cuDNN
 
-step 2.1: Download cuDNN 5.1 from: https://developer.nvidia.com/cudnn
-
+step 2.1: Download & "save" cuDNN to the "home" folder https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.3/prod/8.0_20170926/cudnn-8.0-linux-x64-v7-tgz 
 You have to register a Nvidia developer account.
 
-step 2.2: Install cuDNN 5.1
-
-    $ tar -zxvf cudnn-8.0-linux-x64-v5.0-ga.tgz
-    $ sudo cp -a cuda/include/cudnn.h /usr/local/cuda/include/
-    $ sudo cp -a cuda/lib64/libcudnn* /usr/local/cuda/lib64/
-
-
+    $ tar -zxvf cudnn-8.0-linux-x64-v7.tgz
+    $ sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+    $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+    $ sudo apt-get -f install
  
 ### Install HDF5
 download HDF5 here: https://support.hdfgroup.org/ftp/HDF5/current/src/CMake-hdf5-1.10.1.tar.gz
@@ -127,12 +123,12 @@ Extract the tar.gz to hdf5stuff. Then run the following:
     $ ctest -S HDF5config.cmake,BUILD_GENERATOR=Unix -C Release -VV -O hdf5.log
     $ chmod +x build-unix.sh
     $ ./build-unix.sh
-Navigate to the root directory & create two symbolics so later steps can find HDF5:
+Navigate to the root directory & create two symbolics to ensure later steps can find HDF5:
 
     $ cd /usr/lib/x86_64-linux-gnu
-    $ sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
-    $ sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
-
+    $ sudo ln -s libhdf5_serial.so.10.1.0 libhdf5.so
+    $ sudo ln -s libhdf5_serial_hl.so.10.0.2 libhdf5_hl.so 
+    
 ### Install Boost
 
     $ sudo apt-get install libboost-all-dev
@@ -159,6 +155,54 @@ Extract it to the home folder
     $ sudo apt-get install kate
     $ kate ./Makefile.config
     
+In the Katy editor Ctrl+f to find this in Makefile.config..
+
+    CUDA_DIR := /usr/local/cuda
+    
+and replace it with this:
+
+    CUDA_DIR := /usr/local/cuda-8.0
+    
+Save the document
+
+    $ cd python
+    $ for req in $(cat requirements.txt); do sudo -H pip install $req; done
+    $ cd ..
+    
+Edit the Makefile
+
+    kate ./Makefile
+
+and replace this line:
+
+    NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+
+with the following line
+
+    NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+
+Also, open the file CMakeLists.txt 
+
+    kate ./CMakeLists.txt
+and add the following line:
+
+    # ---[ Includes
+    set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
+
+(See the discussion at: https://github.com/BVLC/caffe/issues/4046)
+
+When compiling with OpenCV 3.0 or errors show imread,imencode,imdecode or VideoCapture open your Makefile 
+
+    kate ./Makefile
+
+add opencv_imgcodecs behind.
+
+    LIBRARIES += glog gflags protobuf leveldb snappy \
+    lmdb boost_system boost_filesystem hdf5_hl hdf5 m \
+    opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
+
+
+
 Paste the following code at the bottom of the document
     
   
