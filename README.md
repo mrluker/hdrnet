@@ -172,8 +172,12 @@ Save the document
 Edit the Makefile
 
     kate ./Makefile
+    
+Add this line before the line BUILD_DIR_LINK := $(BUILD_DIR):
 
-and replace this line:
+    INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+
+Search for and replace this line:
 
     NVCCFLAGS += -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
 
@@ -202,6 +206,8 @@ Ctrl+f "LIBRARIES += glog" and replace what is there with the following code:
     LIBRARIES += glog gflags protobuf leveldb snappy boost_system boost_filesystem m hdf5_hl hdf5 opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
     
 Save and close
+
+
 
 Now we can install. I have added -j $(($(nproc) + 1)) to make the installs multi-threaded and speed them up.
 
