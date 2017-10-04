@@ -127,6 +127,7 @@ Extract the tar.gz to hdf5stuff. Then run the following:
 
     $ cd "hdf5stuff/CMake-hdf5-1.10.1"
     $ ctest -S HDF5config.cmake,BUILD_GENERATOR=Unix -C Release -VV -O hdf5.log
+    $ ctest -S HDF5config.cmake,BUILD_GENERATOR=Unix,FORTRAN_LIBRARIES=YES -C Release -VV -O hdf5.log
     $ chmod +x build-unix.sh
     $ ./build-unix.sh
 Navigate to the root directory & create two symbolics to ensure later steps can find HDF5:
@@ -134,6 +135,11 @@ Navigate to the root directory & create two symbolics to ensure later steps can 
     $ cd /usr/lib/x86_64-linux-gnu
     $ sudo ln -s libhdf5_serial.so.10.1.0 libhdf5.so
     $ sudo ln -s libhdf5_serial_hl.so.10.0.2 libhdf5_hl.so 
+    $ sudo ln -s /usr/local/cuda/lib64/libcudart.so /usr/lib/libcudart.so
+    $ sudo ln -s /usr/include/libhdf5_hl.so /usr/lib/libhdf5_hl.so
+    $ sudo ln -s /usr/include/libhdf5.so /usr/lib/libhdf5.so
+    $ sudo ln -s /usr/include/libhdf5_hl.so /usr/bin/ld/libhdf5_hl.so
+    $ sudo ln -s /usr/include/libhdf5.so /usr/bin/ld/libhdf5.so
     
 ### Install Boost
 
