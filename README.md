@@ -72,6 +72,12 @@ Using GNU Make
     
 ### Install Open CV
 
+    $ sudo apt-get install build-essential
+    $ sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+    $ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+    
+    $ git clone https://github.com/opencv/opencv.git
+
     $ pip install opencv-python
     $ apt-get install libopencv-dev
     
@@ -214,8 +220,8 @@ Now we can install. I have added -j $(($(nproc) + 1)) to make the installs multi
     $ make all -j $(($(nproc) + 1))
     $ make test -j $(($(nproc) + 1))
     $ make runtest -j $(($(nproc) + 1))
-    $ make pycaffe -j $(($(nproc) + 1))
-    $ make distribute -j $(($(nproc) + 1))
+    $ make pycaffe
+    $ make distribute
 
 Paste the following code at the bottom of the document
     
