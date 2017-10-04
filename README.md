@@ -180,6 +180,8 @@ and replace this line:
 with the following line
 
     NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)
+    
+Save and close
 
 Also, open the file CMakeLists.txt 
 
@@ -189,19 +191,25 @@ and add the following line:
     # ---[ Includes
     set(${CMAKE_CXX_FLAGS} "-D_FORCE_INLINES ${CMAKE_CXX_FLAGS}")
 
-(See the discussion at: https://github.com/BVLC/caffe/issues/4046)
+Save and close (See the discussion at: https://github.com/BVLC/caffe/issues/4046)
 
 When compiling with OpenCV 3.0 or errors show imread,imencode,imdecode or VideoCapture open your Makefile 
 
     kate ./Makefile
 
-add opencv_imgcodecs behind.
+Ctrl+f "LIBRARIES += glog" and replace what is there with the following code:
 
-    LIBRARIES += glog gflags protobuf leveldb snappy \
-    lmdb boost_system boost_filesystem hdf5_hl hdf5 m \
-    opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
+    LIBRARIES += glog gflags protobuf leveldb snappy boost_system boost_filesystem m hdf5_hl hdf5 opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs opencv_videoio
+    
+Save and close
 
+Now we can install. I have added -j $(($(nproc) + 1)) to make the installs multi-threaded and speed them up.
 
+    $ make all -j $(($(nproc) + 1))
+    $ make test -j $(($(nproc) + 1))
+    $ make runtest -j $(($(nproc) + 1))
+    $ make pycaffe -j $(($(nproc) + 1))
+    $ make distribute -j $(($(nproc) + 1))
 
 Paste the following code at the bottom of the document
     
